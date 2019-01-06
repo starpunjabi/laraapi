@@ -93,6 +93,7 @@ and run below command in terminal:
 > php artisan route:list
 
 It will show all routes as :
+
 | Method    | URI                       | Name            | Action                                            | Middleware   |
 |-----------|---------------------------|-----------------|---------------------------------------------------|--------------|
 | GET|HEAD  | /                         |                 | Closure                                           | web          |
@@ -104,6 +105,7 @@ It will show all routes as :
 | DELETE    | api/authors/{author}      | authors.destroy | App\Http\Controllers\API\AuthorController@destroy | api          |
 | GET|HEAD  | api/authors/{author}/edit | authors.edit    | App\Http\Controllers\API\AuthorController@edit    | api          |
 
+
 Now, we will add api with Resource like:
 
     Route::apiResource('/authors','API\AuthorController');
@@ -113,6 +115,7 @@ now again check routes list by using artisan, you will see difference
 > php artisan route:list
 
 It will remove ***~~create~~*** and ***~~edit~~*** from route list, see below:
+
 | Method    | URI                  | Name            | Action                                            | Middleware   |
 |-----------|----------------------|-----------------|---------------------------------------------------|--------------|
 | GET|HEAD  | /                    |                 | Closure                                           | web          |
@@ -152,5 +155,6 @@ so, let's create prefix for authors/
 | GET|HEAD  | api/authors/{author}/blogs/{blog} | blogs.show      | App\Http\Controllers\API\BlogController@show      | api          |
 | PUT|PATCH | api/authors/{author}/blogs/{blog} | blogs.update    | App\Http\Controllers\API\BlogController@update    | api          |
 | DELETE    | api/authors/{author}/blogs/{blog} | blogs.destroy   | App\Http\Controllers\API\BlogController@destroy   | api          |
+
 
  
