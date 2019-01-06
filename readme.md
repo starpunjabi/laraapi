@@ -21,8 +21,7 @@ First of navigate to your working directory and install Laravel by composer
 
 **Syntax**
 ```
-composer create-project laravel/laravel {projectName}
-"5.7.*" --prefer-dist
+composer create-project laravel/laravel {projectName} "5.7.*" --prefer-dist
 ```
 **Or**
 ```
