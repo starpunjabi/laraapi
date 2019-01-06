@@ -16,3 +16,14 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResource('/authors','API\AuthorController');
+
+// Route::group(['prefix'=>'authors/'],function(){
+// 	Route::apiResource('{author}/blogs','API\BlogController');
+// });
+
+Route::prefix('/authors')->group(function () {
+    Route::apiResource('{author}/blogs','API\BlogController');
+});
+
